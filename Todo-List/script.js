@@ -1,7 +1,21 @@
 const todoInput = document.querySelector('#todo-input');
+const todoList = document.querySelector('#todo-list');
+
+const savedTodoList = JSON.parse.localStorage.getItem('saved-items');
 
 
-const createTodo = function() {
+if(savedTodoList) {
+    for (let i = 0; i < savedTodoList.length; i++) {
+        createTodo(savedTodoList[i])
+        
+    }
+}
+
+const createTodo = function(storageData) {
+    let todoContents = todoInput.value;
+    if(storageData){
+        todoContents = storageData.contents;
+    }
     const todoList = document.querySelector('#todo-list');
     const newLi = document.createElement('li');
     const newSpan = document.createElement('span');
@@ -9,6 +23,7 @@ const createTodo = function() {
     
     newBtn.addEventListener('click', () => {
         newLi.classList.toggle('complete');
+        saveItemsFn()
     });
 
 
@@ -49,5 +64,6 @@ const saveItemsFn = function (todoList) {
         };
         saveItems.push(todoObj);        
     }
-    console.log(saveItems)
-}
+    
+    localStorage.setItem('saved-items',JSON.stringify(saveItems))
+};
