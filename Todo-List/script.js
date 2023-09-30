@@ -7,7 +7,6 @@ const savedTodoList = JSON.parse.localStorage.getItem('saved-items');
 if(savedTodoList) {
     for (let i = 0; i < savedTodoList.length; i++) {
         createTodo(savedTodoList[i])
-        
     }
 }
 
@@ -16,7 +15,6 @@ const createTodo = function(storageData) {
     if(storageData){
         todoContents = storageData.contents;
     }
-    const todoList = document.querySelector('#todo-list');
     const newLi = document.createElement('li');
     const newSpan = document.createElement('span');
     const newBtn = document.createElement('button');
@@ -32,7 +30,7 @@ const createTodo = function(storageData) {
         newLi.remove();
     })
 
-    newSpan.textContent = todoInput.value;
+    newSpan.textContent = todoContents;
     newLi.appendChild(newBtn);
     newLi.appendChild(newSpan);
     todoList.appendChild(newLi);
