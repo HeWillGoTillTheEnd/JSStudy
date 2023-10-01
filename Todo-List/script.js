@@ -38,7 +38,7 @@ const createTodo = function(storageData) {
     saveItemsFn();
     return todoList;
 }
-
+//
 const keyCodeCheck = function() {
     if(window.event.keyCode === 13 && todoInput.value !== ''){
         createTodo();
