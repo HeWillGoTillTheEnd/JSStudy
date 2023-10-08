@@ -25,7 +25,6 @@ export default function SignupStatePage() {
             setEmailError("이메일이 올바르지 않습니다!! @가 없음!!")
         } else {
         // 2. 백엔드 컴퓨터에 보내주기(백엔드 개발자가 만든 함수. 즉, API)
-        // => 나중에
 
         // 3. 성공알람 보여주기
         alert("회원가입을 축하합니다~~~")   
