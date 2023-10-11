@@ -1,5 +1,5 @@
 export default function StaticRoutingMovedPage(){
 
         
-    return <div>3번 게시글 이동이 완료되었습니다.</div>
+    return <div>3번 게시글쿼리페이지 이동이 완료되었습니다.</div>
 }
